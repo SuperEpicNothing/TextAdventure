@@ -30,9 +30,7 @@ public class Game {
 		initCommands();
 		setupWorld(player);			
 	}
-	//iruwghbihgr9
-	//regrgg
-	//hi tst
+//rgh
 	
 	public Player getPlayer()
 	{
