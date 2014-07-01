@@ -31,7 +31,7 @@ public class Game {
 		setupWorld(player);			
 	}
 //rgh
-	
+	//tihijtojhoiuhy
 	public Player getPlayer()
 	{
 		return player;		
