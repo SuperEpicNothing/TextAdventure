@@ -32,6 +32,8 @@ public class Game {
 	}
 	//iruwghbihgr9
 	//regrgg
+	//hi tst
+	
 	public Player getPlayer()
 	{
 		return player;		
