@@ -6,6 +6,7 @@ import java.util.HashMap;
 import txa.core.command.Command;
 import txa.core.command.Examine;
 import txa.core.command.ExeptionNotEnoughArguments;
+import txa.core.command.Inventory;
 import txa.core.command.Move;
 import txa.core.command.Pickup;
 import txa.core.player.Player;
@@ -61,6 +62,7 @@ public class Game {
 		new Move();
 		new Examine();
 		new Pickup();
+		new Inventory();
 
 	}
 	

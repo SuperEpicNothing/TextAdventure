@@ -21,7 +21,7 @@ public class Inventory extends UI {
 			case "exit":
 			case "e":
 			{
-				p.currentUI=null;
+				p.currentUI=EnumUI.NOTHING.getUI();
 			}	
 			break;
 			
