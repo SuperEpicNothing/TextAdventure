@@ -2,6 +2,7 @@ package txa.core.player;
 
 import java.util.HashMap;
 
+import txa.core.UI.EnumUI;
 import txa.core.UI.Inventory;
 import txa.core.UI.UI;
 import txa.core.world.Item;
@@ -16,7 +17,7 @@ public class Player {
 	//going comment it when i get to it
 	public Player(String n)
 	{
-		currentUI=new Inventory();;
+		currentUI=EnumUI.NOTHING.getUI();
 		name=n;
 		inventory = new HashMap<String,Item>();
 		addItem(new Item("coin","Coin","it is made of Gold",true));
