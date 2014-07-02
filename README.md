@@ -1,7 +1,7 @@
 TextAdventure:
 =============
   - engine
-============= 
+==========
     + location system
     + Command system WIP
     + item system WIP
@@ -10,8 +10,10 @@ TextAdventure:
     * equipment System
     * NPC system
     * Fighting System
-
-
   - actual game
-=============
-    *Every thing
+========
+    *Every 
+    *thing
+    *A
+    *GAME
+    *needs
