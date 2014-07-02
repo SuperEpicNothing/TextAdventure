@@ -41,7 +41,6 @@ public class Examine extends Command {
 			}
 			break;
 			
-			//TODO: create inventory system
 			case "inventory":
 			case "i":
 			{
