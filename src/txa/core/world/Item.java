@@ -31,8 +31,7 @@ public class Item {
 	
 	public void use(Player p)
 	{
-		
-		
+		System.out.println("You can't use "+name);		
 	}
 	public boolean isPickupable(Player p)
 	{

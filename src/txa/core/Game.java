@@ -66,10 +66,31 @@ public class Game {
 	
 	//update function  , because all games need one
 	public void update() {
+		//player.
+		//if player is not in ui
+		if(player.currentUI == null)
+		{
+		//update game
+		updategame();
+		//process  the command 	
 		processCommand();
+		}
+		else
+		{
+			//if ui is not paused
+			if(!player.currentUI.isgamePaused())
+			updategame();
+			
+			player.currentUI.processCommand(c,player);					
+		}
 		
 		if(close)
 			processClose();
+	}
+	
+	protected void updategame()
+	{
+		
 	}
 	
 	//this is processing stuff player says
