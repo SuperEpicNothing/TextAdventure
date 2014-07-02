@@ -21,7 +21,7 @@ public class Adventure extends Game {
 		HashMap<String, Exit> e = new HashMap<String, Exit>();
 		HashMap<String, Item> i = new HashMap<String, Item>();
 		
-		e.put(AdvString.getString("mystdoor"),
+		e.put("mystdoor",
 				new Exit(null, "Mysterious Door", 
 				"The Black Door seems to be emmiting a glow.\n"
 						+ "On the door You can see a text written in  blood reading:"
