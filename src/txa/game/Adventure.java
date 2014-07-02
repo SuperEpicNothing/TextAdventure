@@ -14,41 +14,47 @@ public class Adventure extends Game {
 	public Adventure(Console c) {
 		super(c);
 	}
-	
+	//this is a "Demo game" it is using the "engine" to create the game.
 	@Override
 	protected void setupWorld(Player p) 
 	{ 
 		HashMap<String, Exit> e = new HashMap<String, Exit>();
 		HashMap<String, Item> i = new HashMap<String, Item>();
-		e.put(AdvString.getString("Adventure.place.id.0"),
-				new Exit(null, AdvString.getString("Adventure.place.name.0"), 
-				AdvString.getString("Adventure.place.desc.0"), true)); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		e.put(AdvString.getString("Adventure.place.id.1"),
-				new Exit(null, AdvString.getString("Adventure.place.name.1"))); //$NON-NLS-1$ //$NON-NLS-2$
 		
-		world.put(AdvString.getString("Adventure.place.name.2"),
-				new Place(null, AdvString.getString("Adventure.place.name.2"), AdvString.getString("Adventure.place.desc.1"))); //$NON-NLS-1$ //$NON-NLS-2$
+		e.put(AdvString.getString("mystdoor"),
+				new Exit(null, "Mysterious Door", 
+				"The Black Door seems to be emmiting a glow.\n"
+						+ "On the door You can see a text written in  blood reading:"
+						+ "\n\t \"The Ones who enter the Void shall not return \"", true));
+		e.put("entrance",
+				new Exit(null, "Entrance")); 
+		
+		world.put("The Room",
+				new Place(null, "The Room", "The dark room appears to be small. "
+						+ "\nYou do not sense any presence."
+						+ "\nYou see a dark door in front of you." ));
 		i.put("key", 
 				new Item("key","The Golden Key", "The key is made of gold\n"
 										 + "It seems to hold immesurable power." , true)
 				);
 		
 		
-		world.get(AdvString.getString("Adventure.place.name.2")).addExits(e);
-		world.get(AdvString.getString("Adventure.place.name.2")).addItems(i);
-		world.get(AdvString.getString("Adventure.place.name.2")).enter(p);
+		world.get("The Room").addExits(e);
+		world.get("The Room").addItems(i);
+		world.get("The Room").enter(p);
 
 		
 		e = new HashMap<String, Exit>();
 		i = new HashMap<String, Item>();
-		world.put(AdvString.getString("Adventure.place.name.3") ,
-				new Place(null, AdvString.getString("Adventure.place.name.3"),AdvString.getString("Adventure.place.desc.2"))); //$NON-NLS-1$ //$NON-NLS-2$
-		world.get(AdvString.getString("Adventure.place.name.2")).addExits(e);
-		world.get(AdvString.getString("Adventure.place.name.2")).addItems(i);
+		world.put("The Void" ,
+				new Place(null, "The Void","All you can see is empty blackness."
+						+ "\nThere is no escape."));
+		world.get("The Room").addExits(e);
+		world.get("The Void").addItems(i);
 		
-		world.get(AdvString.getString("Adventure.place.name.2"))
-			.getExit(AdvString.getString("Adventure.place.id.0"))
-			.setTarget(world.get(AdvString.getString("Adventure.place.name.3"))); //$NON-NLS-1$
+		world.get("The Room")
+			.getExit("mystdoor")
+			.setTarget(world.get("The Void"));
 	}
 
 }
