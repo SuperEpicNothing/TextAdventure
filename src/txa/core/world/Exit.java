@@ -2,11 +2,13 @@ package txa.core.world;
 
 public class Exit 
 {
+	//data!
 	private Place target;
 	private boolean visible;
 	private String description;
 	private String name;
-	
+
+	//create an exit with name description and visibility
 	public Exit(Place t)
 	{
 		this(t,t.getName(),"",true);
@@ -26,7 +28,7 @@ public class Exit
 		this(t,n,"",v);
 	}
 
-	
+	//actually create it
 	public Exit(Place target,String name, String description,Boolean visible)
 	{
 		this.target = target;
@@ -34,6 +36,8 @@ public class Exit
 		this.description= description;
 		this.visible = visible;
 	}
+	
+	//a bunch of setters and getters \/
 	
 	public void setTarget(Place target) {
 		this.target = target;

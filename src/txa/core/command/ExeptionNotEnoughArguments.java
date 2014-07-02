@@ -1,5 +1,7 @@
 package txa.core.command;
 
+
+//basically this works 
 public class ExeptionNotEnoughArguments extends Exception {
 
 	/**

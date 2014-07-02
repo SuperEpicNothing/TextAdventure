@@ -10,25 +10,29 @@ public class Main {
 	private static Game g;
 	public static void main(String[] args) {
 		Console c = System.console();
+		//if you can not play the game in this thing you are running it in spit characters at the player Yeah.
 		if (c == null) {
-	            for(int i=0x2800;i<0x2900;i++)
-	            	System.out.print((char)i);
+			//for numbers
+			for(int i=0x2800;i<0x2900;i++)
+				//get characters
+				System.out.print((char)i);
+				//exit with code 1.
 	            System.exit(1);
 	        }
+		
+		//Adventure time!
 		g = new Adventure(c);
 
+		//Update it till the game tells you to
 		while(!g.close) 
 		{
 		g.update();
 		}
+		//end correctly
+		System.exit(0);
        
-//        Vector<Exit> e = new Vector<Exit>();
-//        e.add(new Exit(null, "Mysterious Door", "The Black Door seems to be emmiting a glow./n On the door You can see a text written in what appears to be blood reading\n \"The Ones who enter the Void shall not return \"", true));
-//        e.add(new Exit(null, "Entrance"));
-//       Place p= new Place(e, "The Room", "The dark room appears to be small. \nYou do not sence any presence. \nYou see a dark door in front of you.");
-//       p.enter(new Player(c.readLine("What is Your name?\n")));
 	}
-	
+	//get the current game i should think of something better to store the game
 	public static Game getGame()
 	{
 		return g;		

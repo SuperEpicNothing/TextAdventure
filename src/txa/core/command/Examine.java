@@ -5,6 +5,7 @@ import txa.core.player.Player;
 
 public class Examine extends Command {
 
+	//possible aliases 
 	private final static String[] COMMAND = {"examine","e"};
 
 	public Examine() {
@@ -12,6 +13,7 @@ public class Examine extends Command {
 	}
 	
 	@Override
+	//work!
 	public void execute(String[] command) throws ExeptionNotEnoughArguments {
 		super.execute(command);
 		String item=command[2];
@@ -39,6 +41,7 @@ public class Examine extends Command {
 			}
 			break;
 			
+			//TODO: create inventory system
 			case "inventory":
 			case "i":
 			{

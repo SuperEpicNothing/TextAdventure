@@ -13,21 +13,29 @@ import txa.core.world.Place;
 
 public class Game {
 	
+	//data!
 	protected Player player;
 	protected HashMap<String , Place > world;
 	public static HashMap<String, Command> commands;
 	protected Console c;
 	public boolean close;
 	
+	//lets call all the stuff we need.
 	public Game(Console c)
 	{
+		//store the console, it is possible we may need it.
 		this.c=c;
+		//set end condition to false 
 		close=false;
+		//clear screen
 		clear();
+		//self explanatory
 		player=createPlayer();
 		world = new HashMap<String , Place> ();
 		commands = new HashMap<String, Command>();
+		//create all the possible commands ever
 		initCommands();
+		//create the world with player in it.
 		setupWorld(player);			
 	}
 
@@ -35,7 +43,8 @@ public class Game {
 	{
 		return player;		
 	}
-
+	
+	//function for "clearing" the screen
 	public void clear()
 	{
 		for(int i=0;i<23;i++)
@@ -43,6 +52,10 @@ public class Game {
 		
 	}
 	
+	//TODO: create print functions here so i can add GUI later.
+	
+	
+	//this is how i create commands
 	public void initCommands()
 	{
 		new Move();
@@ -50,7 +63,8 @@ public class Game {
 		new Pickup();
 
 	}
-
+	
+	//update function  , because all games need one
 	public void update() {
 		processCommand();
 		
@@ -58,32 +72,44 @@ public class Game {
 			processClose();
 	}
 	
+	//this is processing stuff player says
 	protected void processCommand()
 	{
+		//ask him stuff
 		String[] command=c.readLine("What do You want to do?\n").toLowerCase().split(" ");
 		
+		//not sure if it is efficient but OK.
 		try{
 			
+			//get the command
 		if(command.length >= 1 && commands.get(command[0])!=null)
+			//execute it
 			commands.get(command[0]).execute(command);
 		else
+			//or not
 			System.out.println("The command has not been recognised.");			
 		}
+		
 		catch (ExeptionNotEnoughArguments e) {
+			//shit happens
 			System.out.println("Not Enough Arguments, correct use:");
 			System.out.println(e.getMessage());
 		}
+		
+		
 	}
 	
+	//Basically a game over/ save screen.
 	protected void processClose()
 	{
 		
 	}
 
+	//create shit.
 	protected void setupWorld(Player p) {}
 
 
-
+	//and player
 	protected Player createPlayer() {
 
 		return new Player(c.readLine("What is Your name?\n"));

@@ -4,12 +4,13 @@ import txa.Main;
 import txa.core.player.Player;
 
 public class Pickup extends Command {
-
+	//aliases
 	private final static String[] COMMAND = {"pickup","p"};
 	public Pickup() {
 		super(COMMAND, 2, " <Item>");
 	}
 	
+	//WIP
 	@Override
 	public void execute(String[] command) throws ExeptionNotEnoughArguments {
 		super.execute(command);

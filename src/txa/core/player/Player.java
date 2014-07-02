@@ -10,7 +10,7 @@ public class Player {
 	protected Place location;
 	protected HashMap<String,Item> inventory;
 
-	
+	//going comment it when i get to it
 	public Player(String n)
 	{
 		name=n;

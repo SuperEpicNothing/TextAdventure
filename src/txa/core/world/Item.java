@@ -3,7 +3,9 @@ package txa.core.world;
 import txa.core.player.Player;
 
 public class Item {
-
+	
+	
+	//WIP data!
 	private boolean visible;
 	private String description;
 	private String name;

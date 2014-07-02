@@ -7,12 +7,14 @@ import txa.core.player.Player;
 
 public class Place {
 	
+	
+	//data!
 	protected String description;
 	protected String name;
 	protected HashMap<String,Exit> exits;
 	protected HashMap<String,Item> items;
 
-	
+	//create a place with existing exits
 	public Place(HashMap<String,Exit> e,String n,String d)
 	{ 
 		name=n;
@@ -25,7 +27,7 @@ public class Place {
 		
 		items=new HashMap<String,Item>();
 	}
-
+	//getters and setters
 	public String getDescription() {
 		return description;
 	}
@@ -41,7 +43,7 @@ public class Place {
 		this.name = name;
 	}
 	
-	
+	//a set of get add and remove stuff
 	public HashMap<String,Exit> getExits(){
 		return exits;
 	}
@@ -64,6 +66,7 @@ public class Place {
 	}
 	
 	
+	//a set of get add and remove stuff
 	public HashMap<String,Item> getItems(){
 		return items;
 	}
@@ -85,32 +88,37 @@ public class Place {
 		items.remove(e);
 	}
 	
-	
+	//lists every thing in a place
 	public void list()
 	{
+		//get all values
 		for(Exit e:exits.values())
-		{
+		{		
+			//get pairs of keys and values 
 			 for (Entry<String, Exit> entry : exits.entrySet()) {
-			        if (e.equals(entry.getValue())) {
-			        	if(e.isVisible())
-			        	System.out.println("Exit: "+entry.getKey()+" "+e.getName());
-			        	break;
+				 //if key is equal to the value
+				 if (e.equals(entry.getValue())) {
+			        	if(e.isVisible())//and is visible
+			        	System.out.println("Exit: "+entry.getKey()+" "+e.getName());//spit it out
+			        	break;//continue with next value
 			        }
 			    }			
 		}
 		
+		//get all values
 		for(Item e:items.values())
-		{
+		{	//get pairs of keys and values 
 			 for (Entry<String, Item> entry : items.entrySet()) {
-			        if (e.equals(entry.getValue())) {
-			        	if(e.isVisible())
-			        	System.out.println("Item: "+entry.getKey()+" "+e.getName());
-			        	break;
+			        if (e.equals(entry.getValue())) {//if key is equal to the value
+			        	if(e.isVisible())//and is visible
+			        	System.out.println("Item: "+entry.getKey()+" "+e.getName());//spit it out
+			        	break;//continue with next value
 			        }
 			    }			
 		}
 	}
 
+	//when player enters the room this happens is mostly describes the room
 	public void enter(Player p) {
 		System.out.println();
 		System.out.println(p.getName()+" enters "+name);
