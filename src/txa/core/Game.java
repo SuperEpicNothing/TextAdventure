@@ -9,6 +9,7 @@ import txa.core.command.ExeptionNotEnoughArguments;
 import txa.core.command.Inventory;
 import txa.core.command.Move;
 import txa.core.command.Pickup;
+import txa.core.command.Use;
 import txa.core.player.Player;
 import txa.core.world.Place;
 
@@ -63,7 +64,7 @@ public class Game {
 		new Examine();
 		new Pickup();
 		new Inventory();
-
+		new Use();
 	}
 	
 	//update function  , because all games need one
