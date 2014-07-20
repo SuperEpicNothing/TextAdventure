@@ -1,6 +1,6 @@
 package txa.core.command;
 
-import txa.Main;
+import txa.core.GameController;
 import txa.core.player.Player;
 import txa.core.world.Place;
 
@@ -19,7 +19,7 @@ public class Move extends Command {
 		super.execute(command);
 		
 		//get player and location
-		Player p = Main.getGame().getPlayer();
+		Player p = GameController.getGame().getPlayer();
 		Place currloc = p.getLocation();
 		
 		//If you can find that exit and player can see it.

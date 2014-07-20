@@ -1,6 +1,7 @@
 package txa.core.command;
 
 import txa.Main;
+import txa.core.GameController;
 import txa.core.player.Player;
 
 public class Examine extends Command {
@@ -17,7 +18,7 @@ public class Examine extends Command {
 	public void execute(String[] command) throws ExeptionNotEnoughArguments {
 		super.execute(command);
 		String item=command[2];
-		Player p = Main.getGame().getPlayer();
+		Player p = GameController.getGame().getPlayer();
 		
 		switch(command[1])
 		{
