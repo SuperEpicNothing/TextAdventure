@@ -12,6 +12,7 @@ public class Player {
 	protected String name;
 	protected Place location;
 	protected HashMap<String,Item> inventory;
+	protected HashMap<String,Item> equipment;
 	public UI currentUI;
 
 	//going comment it when i get to it
@@ -51,6 +52,35 @@ public class Player {
 	public void addItem(Item e)
 	{
 		inventory.put(e.getID(), e);
+	}
+	
+	public boolean unequipItem(String key)
+	{
+		Item item = equipment.get(key);
+		if(item!=null)
+		{
+		equipment.remove(item);
+		addItem(item);
+		return true;
+		}
+		return false;
+	}	
+	public HashMap<String,Item> getEquipment()
+	{
+		return equipment;		
+	}
+	public boolean equipItem(Item e)
+	{
+		if(e.isEquipable(this))
+		{
+		inventory.put(e.getID(), e);
+		}
+		return true;
+	}
+	public void update()
+	{
+
+		location.update();
 	}
 	public void addItems(HashMap<String,Item> m)
 	{

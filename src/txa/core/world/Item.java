@@ -67,4 +67,8 @@ public class Item {
 		this.name = name;
 	}
 
+	public boolean isEquipable(Player player) {
+		return false;
+	}
+
 }
