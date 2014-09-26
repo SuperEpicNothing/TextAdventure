@@ -1,6 +1,7 @@
 package txa.core.command;
 
 import txa.Main;
+import txa.core.GameController;
 import txa.core.UI.EnumUI;
 
 public class Inventory extends Command {
@@ -15,7 +16,7 @@ public class Inventory extends Command {
 	@Override
 	public void execute(String[] command) throws ExeptionNotEnoughArguments {
 		super.execute(command);
-		Main.getGame().
+		GameController.getGame().
 		getPlayer()
 		.currentUI = EnumUI.INVENTORY.getUI();
 	}

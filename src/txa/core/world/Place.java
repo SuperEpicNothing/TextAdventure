@@ -129,6 +129,9 @@ public class Place {
 
 		p.setLocation(this);
 	}
+	public void update() {
+		
+	}
 
 
 	

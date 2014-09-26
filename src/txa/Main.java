@@ -32,10 +32,5 @@ public class Main {
 		System.exit(0);
        
 	}
-	//get the current game i should think of something better to store the game
-	public static Game getGame()
-	{
-		return g;		
-	}
 
 }

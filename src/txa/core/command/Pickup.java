@@ -1,6 +1,6 @@
 package txa.core.command;
 
-import txa.Main;
+import txa.core.GameController;
 import txa.core.player.Player;
 
 public class Pickup extends Command {
@@ -16,7 +16,7 @@ public class Pickup extends Command {
 		super.execute(command);
 		
 		String item = command[1];
-		Player p = Main.getGame().getPlayer();
+		Player p =GameController.getGame().getPlayer();
 
 		
 		if(p.getLocation().getItem(item) != null && p.getLocation().getItem(item).isVisible() && p.getLocation().getItem(item).isPickupable(p))

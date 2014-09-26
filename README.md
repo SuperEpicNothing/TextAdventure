@@ -5,7 +5,7 @@ TextAdventure:
     + location system
     + Command system WIP
     + item system WIP
-    * In world item interaction
+    + In world item interaction
     * UI System
     * equipment System
     * NPC system

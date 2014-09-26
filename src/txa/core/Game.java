@@ -10,6 +10,7 @@ import txa.core.command.Inventory;
 import txa.core.command.Move;
 import txa.core.command.Pickup;
 import txa.core.command.Use;
+import txa.core.command.Wait;
 import txa.core.player.Player;
 import txa.core.world.Place;
 
@@ -32,6 +33,7 @@ public class Game {
 		//clear screen
 		clear();
 		//self explanatory
+		new GameController(this);
 		player=createPlayer();
 		world = new HashMap<String , Place> ();
 		commands = new HashMap<String, Command>();
@@ -65,6 +67,7 @@ public class Game {
 		new Pickup();
 		new Inventory();
 		new Use();
+		new Wait();
 	}
 	
 	//update function  , because all games need one
@@ -93,7 +96,7 @@ public class Game {
 	
 	protected void updategame()
 	{
-		
+		player.update();
 	}
 	
 	//this is processing stuff player says
